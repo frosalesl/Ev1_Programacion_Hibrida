@@ -1,0 +1,64 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Triángulo</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+
+    <!-- En esta sección pedimos al usuario que escoja el tipo de triángulo que requiere conocer perímetro -->
+    <ion-item>
+      <ion-label>Tipo de triángulo</ion-label>
+      <ion-select [(ngModel)]="tipo">
+        <ion-select-option value="escaleno">Triángulo escaleno</ion-select-option>
+        <ion-select-option value="equilatero">Triángulo equilátero</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- En esta sección agregamos la imagen del triángulo escaleno descargada para usar en el proyecto -->
+    <div class="img-container" *ngIf="tipo === 'escaleno'">
+      <img src="assets/img/Escaleno.png" class="figura-img">
+    </div>
+
+    <!-- Aquí e muestran los lados del triángulo escaleno -->
+    <div *ngIf="tipo === 'escaleno'">
+      <ion-item>
+        <ion-label position="stacked">Medida lado "a" en centímetros</ion-label>
+        <ion-input type="number" [(ngModel)]="lado1"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Medida lado "b" en centímetros</ion-label>
+        <ion-input type="number" [(ngModel)]="lado2"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Medida lado "c" en centímetros</ion-label>
+        <ion-input type="number" [(ngModel)]="lado3"></ion-input>
+      </ion-item>
+    </div>
+
+    <!-- En esta sección agregamos la imagen del triángulo equilátero descargada para usar en el proyecto -->
+    <div class="img-container" *ngIf="tipo === 'equilatero'">
+      <img src="assets/img/Equilatero.png" class="figura-img">
+    </div>
+
+    <!-- Aquí se muestra el lado a completar del triángulo equilátero -->
+    <div *ngIf="tipo === 'equilatero'">
+      <ion-item>
+        <ion-label position="stacked">Medida lado "a" en centímetros</ion-label>
+        <ion-input type="number" [(ngModel)]="lado"></ion-input>
+      </ion-item>
+    </div>
+
+    <!-- En esta sección se configura el botón para calcular el perímetro del triángulo -->
+    <ion-button expand="block" class="ion-margin-top" (click)="calcularPerimetro()">
+      Calcular perímetro del triángulo
+    </ion-button>
+
+    <!-- Aquí se configura el resultado -->
+    <div *ngIf="resultado !== null" class="ion-margin-top">
+      <strong>Perímetro del triángulo:</strong> {{ resultado.toFixed(2) }} centímetros.
+    </div>
+
+  </ion-card-content>
+</ion-card>

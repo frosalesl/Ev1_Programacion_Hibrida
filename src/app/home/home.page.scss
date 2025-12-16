@@ -1,0 +1,63 @@
+/* Fondo de toda la página */
+ion-content {
+  --background: #b9b9b9; /* Fondo de la pantalla */
+  display: flex;
+  flex-direction: column; /* Mantiene los elementos en columna */
+  justify-content: flex-start; /* Ajusta contenido desde arriba */
+  align-items: center; /* Centra horizontalmente */
+  padding-top: 20px; /* Espacio superior */
+}
+
+/* Contenedor principal de los elementos internos */
+.contenedor-principal {
+  width: 90%; // Lo dejo para celulares
+  max-width: 400px; // Lo dejo para celulares
+  background-color: #fcfbd5; /* Fondo visible */
+  padding: 20px; /* Espacio interno */
+  border-radius: 12px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra ligera */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px; /* Espacio inferior opcional */
+}
+
+/* Para pantallas de computador, agrego esta configuración */
+@media (min-width: 768px) {
+  .contenedor-principal {
+    width: 60%;        /* más ancho en PC */
+    max-width: 800px;  /* límite máximo más grande */
+  }
+}
+
+/* Estilos para el selector de figura */
+ion-item {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+/* Titulos dentro del contenedor */
+.contenedor-principal strong {
+  font-size: 20px;
+  line-height: 26px;
+  color: #333;
+}
+
+/* Párrafos dentro del contenedor */
+.contenedor-principal p {
+  font-size: 16px;
+  line-height: 22px;
+  color: #8c8c8c;
+  margin: 10px 0 0 0;
+}
+
+/* Enlaces dentro del contenedor */
+.contenedor-principal a {
+  text-decoration: none;
+  color: #007bff;
+  transition: all 0.3s ease;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

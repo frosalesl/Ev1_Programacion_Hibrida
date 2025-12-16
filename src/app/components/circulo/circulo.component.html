@@ -1,0 +1,30 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Calcular el perímetro de un círculo</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+
+    <!-- Aquí agrego la imagen del círculo con la fórmula para que lo pueda ver el usuario-->
+    <div class="img-container">
+      <img src="assets/img/Circulo.png" class="figura-img">
+    </div>
+
+    <!-- Aquí se consulta por el radio del círculo en centímetros-->
+    <ion-item>
+      <ion-label position="stacked">Radio (r) del círculo en centímetros</ion-label>
+      <ion-input type="number" [(ngModel)]="radio"></ion-input>
+    </ion-item>
+
+    <!-- Aquí se configura el botón para realizar el cálculo del perímetro del círculo -->
+    <ion-button expand="block" class="ion-margin-top" (click)="calcularPerimetro()">
+      Calcular perímetro del círculo
+    </ion-button>
+
+    <!-- Esta parte ya muestra el resultado del perímetro del círculo en centímetros -->
+    <div *ngIf="resultado !== null" class="resultado">
+      <strong>Perímetro del círculo:</strong> {{ resultado.toFixed(2) }} centímetros.
+    </div>
+
+  </ion-card-content>
+</ion-card>

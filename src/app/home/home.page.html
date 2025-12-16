@@ -1,0 +1,16 @@
+<ion-content class="ion-padding">
+  <div class="contenedor-principal">
+    <!-- Aquí se configura el selector de la figura -->
+    <ion-item>
+      <ion-label>Seleccione una figura para calcular su perímetro</ion-label>
+      <ion-select [(ngModel)]="figuraSeleccionada">
+        <ion-select-option value="circulo">Círculo</ion-select-option>
+        <ion-select-option value="triangulo">Triángulo</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Aquí se configura los componentes de los hijos -->
+    <app-circulo *ngIf="figuraSeleccionada === 'circulo'"></app-circulo>
+    <app-triangulo *ngIf="figuraSeleccionada === 'triangulo'"></app-triangulo>
+  </div>
+</ion-content>
